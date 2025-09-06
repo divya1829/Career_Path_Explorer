@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Paths After 12th</title>
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #f0f4ff;
+      line-height: 1.6;
+      min-height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10, 25, 48, 0.75);
+      z-index: -1;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+
+    /* Content */
+    main {
+      padding: 100px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #e0e7ff;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(224, 231, 255, 0.8);
+    }
+
+    p.subtitle {
+      font-weight: 500;
+      font-size: 1.15rem;
+      color: #cbd5e1cc;
+      margin-bottom: 40px;
+      max-width: 600px;
+      text-align: center;
+      text-shadow: 0 0 5px rgba(203, 213, 225, 0.7);
+    }
+
+    .cards {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 25px 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+      color: #e0e7ff;
+    }
+
+    .card:hover {
+      box-shadow: 0 8px 40px rgba(100, 149, 237, 0.6);
+      transform: translateY(-6px);
+      border-color: rgba(100, 149, 237, 0.6);
+    }
+
+    .icon {
+      background-color: rgba(59, 130, 246, 0.8);
+      color: white;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.6);
+    }
+
+    .card-content {
+      flex: 1;
+    }
+
+    .card-content h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #dbeafe;
+      text-shadow: 0 0 4px rgba(219, 234, 254, 0.8);
+    }
+
+    .card-content ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      color: #cbd5e1cc;
+      font-size: 1rem;
+    }
+
+    .card-content ul li {
+      margin-bottom: 8px;
+    }
+
+    .card-content ul li strong {
+      color: #e0e7ff;
+      font-weight: 600;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p.subtitle {
+        font-size: 1rem;
+        max-width: 100%;
+      }
+
+      .cards {
+        max-width: 100%;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+      }
+
+      .card-content h2 {
+        font-size: 1.25rem;
+      }
+
+      .card-content ul {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_guide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_career.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="about_the_website.html" target="_blank">About the Website</a>
+          <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="carrer_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main>
+    <h1>Career Paths After 12th</h1>
+    <p class="subtitle">
+      Discover your options after 12th standard across Science, Commerce, Arts, and Skill-based courses to build a successful future.
+    </p>
+
+    <div class="cards">
+      <div class="card">
+        <div class="icon"><i class="fas fa-atom"></i></div>
+        <div class="card-content">
+          <h2>Science Stream</h2>
+          <ul>
+            <li><strong>Engineering:</strong> Computer Science, Mechanical, Civil, Electrical</li>
+            <li><strong>Medical:</strong> MBBS, BDS, Pharmacy, Nursing</li>
+            <li><strong>Pure Sciences:</strong> Physics, Chemistry, Biology, Mathematics</li>
+            <li><strong>IT & Software:</strong> BCA, Cybersecurity, Software Development</li>
+            <li><strong>Architecture & Design:</strong> B.Arch, Interior Design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><i class="fas fa-chart-line"></i></div>
+        <div class="card-content">
+          <h2>Commerce Stream</h2>
+          <ul>
+            <li><strong>Accounting & Finance:</strong> B.Com, Chartered Accountancy (CA)</li>
+            <li><strong>Business Management:</strong> BBA, MBA (Post Graduation)</li>
+            <li><strong>Economics & Banking:</strong> Economics Degree, Banking Jobs</li>
+            <li><strong>Insurance & Taxation:</strong> Insurance Sector, Tax Consultancy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="icon"><i class="fas fa-feather-alt"></i></div>
+        <div class="card-content">
+          <h2>Arts / Humanities Stream</h2>
+          <ul>
+            <li><strong>Social Sciences:</strong> History, Political Science, Psychology</li>
+            <li><strong>Languages & Literature:</strong> Journalism, Mass Communication</li>
+            <li><strong>Design & Fine Arts:</strong> Graphic Design, Fashion, Animation</li>
+            <li><strong>Law:</strong> BA LLB (Integrated Law Course)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

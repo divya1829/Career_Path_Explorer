@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Path Explorer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: #fdfdfd;
+      color: #333;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_guide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_career.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="about_the_website.html" target="_blank">About the Website</a>
+          <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="career_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your page content starts here -->
+  <div style="padding: 30px;">
+    <h1>Welcome to Career Path Explorer</h1>
+    <p>This is your main content area. Add your unique content below the header.</p>
+  </div>
+
+</body>
+</html>

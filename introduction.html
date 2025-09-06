@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Introduction - Career Path Explorer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset & base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #2e3e57;
+      color: #ccd6f6;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Header */
+    .header {
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+    .nav-item {
+      position: relative;
+    }
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+
+    /* Main container */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.07);
+      padding: 30px;
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+      color: #ccd6f6;
+    }
+
+    h1 {
+      color: #ffffff;
+      text-align: center;
+      margin-bottom: 25px;
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin-top: 15px;
+      padding-left: 20px;
+    }
+
+    ul li {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #e6f1ff;
+      padding: 10px 15px;
+      background-color: rgba(160, 210, 235, 0.08);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border-left: 3px solid #a0d2eb;
+      list-style: none;
+      position: relative;
+    }
+    ul li:hover {
+      background-color: rgba(160, 210, 235, 0.15);
+      transform: translateX(5px);
+    }
+    ul li::before {
+      content: "✓";
+      color: #a0d2eb;
+      font-weight: bold;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #8a9bb8;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_guide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_career.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="about_the_website.html" target="_blank">About the Website</a>
+          <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="career_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Welcome to Career Path Explorer</h1>
+    <p>
+      Career Path Explorer is a free and simple platform designed to guide students in choosing the right career
+      after their current stage of education — whether they are in school, college, or just finished their B.Tech.
+    </p>
+
+    <p>Our goal is to provide:</p>
+    <ul>
+      <li>Clear career options after 10th, Intermediate, and B.Tech</li>
+      <li>Information on skill-based and degree-based paths</li>
+      <li>Guidance for competitive exams and entrance tests</li>
+      <li>Insights into various career fields like coding, designing, government jobs, etc.</li>
+    </ul>
+
+    <p>
+      Whether you're confused or curious, Career Path Explorer is here to help you take the next step confidently.
+    </p>
+
+    <div class="footer">
+      &copy; 2025 Career Path Explorer | Empowering Your Future
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Career Options After 10th</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    body {
+      background: url('https://images.unsplash.com/photo-1557683316-973673baf926?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center/cover;
+      background-attachment: fixed;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+
+    .container {
+      padding: 60px 20px;
+      text-align: center;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.4);
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
+
+    .card-grid {
+      display: grid;
+      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      padding: 0 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      color: #fff;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_quide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_carrer.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html">About Us</a>
+          <a href="about_the_website.html">About the Website</a>
+          <a href="contact_and_support.html">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="carrer_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1>Career Options After 10th</h1>
+    <div class="card-grid">
+      <div class="card">
+        <h2>Diploma in Engineering</h2>
+        <p>Polytechnic courses in Mechanical, Civil, ECE, etc. (3 years)</p>
+      </div>
+      <div class="card">
+        <h2>ITI Courses</h2>
+        <p>Short-term industrial training in Electrician, Fitter, etc. (6 months - 2 years)</p>
+      </div>
+      <div class="card">
+        <h2>Intermediate (10+2)</h2>
+        <p>Choose from MPC, BiPC, MEC, CEC, HEC depending on your interest.</p>
+      </div>
+      <div class="card">
+        <h2>Paramedical Courses</h2>
+        <p>Courses like DMLT, X-Ray Technician, and more in the healthcare field.</p>
+      </div>
+      <div class="card">
+        <h2>Short-term Computer Courses</h2>
+        <p>Learn basic computer skills, MS Office, DTP, and programming fundamentals.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

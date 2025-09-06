@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Path Explorer - Top Careers 2025</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    body {
+      
+      background-color: #0a192f;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* Header/Nav Styles */
+    .header {
+      width: 100%;
+      max-width: 2000px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+      user-select: none;
+    }
+
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+
+    /* Careers Section */
+
+    .main-content {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .main-content h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      color: #8ec0d1;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .subtitle {
+      color: #8a9bb8;
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 40px auto;
+      text-align: center;
+    }
+
+    .careers-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .career-card {
+      background: rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease;
+    }
+
+    .career-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 28px rgba(0, 100, 255, 0.3);
+    }
+
+    .career-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .career-content {
+      padding: 25px;
+    }
+
+    .career-title {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .career-salary {
+      color: #97c5d2;
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .career-stats {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: rgba(100, 255, 218, 0.1);
+      color: #97c5d2;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .career-description {
+      color: #ccd6f6;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin: 60px auto 20px auto;
+      text-align: center;
+      color: #8a9bb8;
+      font-size: 0.9rem;
+      max-width: 1200px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .careers-container {
+        grid-template-columns: 1fr;
+      }
+      .header {
+        flex-wrap: wrap;
+        padding: 15px 20px;
+      }
+      .nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_guide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_career.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="about_the_website.html" target="_blank">About the Website</a>
+          <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="career_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="main-content">
+    <h1>Top Careers in 2025</h1>
+    <p class="subtitle">Explore high-growth, high-salary career paths with projected job openings and salary information</p>
+
+    <div class="careers-container">
+      <!-- Career Card 1 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Software Developer" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Software Developer</h2>
+          <p class="career-salary">$130,160 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">17% growth</span>
+            <span class="stat-item">125,100 openings</span>
+          </div>
+          <p class="career-description">Design, create, and maintain software applications crucial to daily operations across industries. Requires expertise in programming languages and system design. The role is evolving with AI integration, making it one of the most future-proof careers.</p>
+        </div>
+      </div>
+
+      <!-- Career Card 2 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Nurse Practitioner" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Nurse Practitioner</h2>
+          <p class="career-salary">$126,260 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">46% growth</span>
+            <span class="stat-item">135,500 openings</span>
+          </div>
+          <p class="career-description">Essential healthcare providers diagnosing and treating various conditions, often serving as primary care providers. With an aging population, this is among the fastest-growing medical professions with excellent job stability.</p>
+        </div>
+      </div>
+
+      <!-- Career Card 3 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Scientist" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Data Scientist</h2>
+          <p class="career-salary">$108,020 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">36% growth</span>
+            <span class="stat-item">73,100 openings</span>
+          </div>
+          <p class="career-description">Collect, analyze, and interpret complex data to help organizations make strategic decisions. Requires expertise in statistics, machine learning, and data visualization. Many positions offer remote work options.</p>
+        </div>
+      </div>
+
+      <!-- Career Card 4 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Physician" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Physician</h2>
+          <p class="career-salary">$248,640 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">4% growth</span>
+            <span class="stat-item">13,100 openings</span>
+          </div>
+          <p class="career-description">Frontline healthcare providers who diagnose and treat medical conditions. Telemedicine options are expanding, allowing some physicians to work remotely. Requires extensive education but offers the highest compensation in healthcare.</p>
+        </div>
+      </div>
+
+      <!-- Career Card 5 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Financial Manager" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Financial Manager</h2>
+          <p class="career-salary">$156,100 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">17% growth</span>
+            <span class="stat-item">138,300 openings</span>
+          </div>
+          <p class="career-description">Guide businesses on investments and long-term financial strategies. The finance sector continues to offer high salaries, especially in tech hubs. Many roles now offer hybrid work arrangements.</p>
+        </div>
+      </div>
+
+      <!-- Career Card 6 -->
+      <div class="career-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Information Security Analyst" class="career-image" />
+        <div class="career-content">
+          <h2 class="career-title">Information Security Analyst</h2>
+          <p class="career-salary">$120,360 median salary</p>
+          <div class="career-stats">
+            <span class="stat-item">28% growth</span>
+            <span class="stat-item">59,100 openings</span>
+          </div>
+          <p class="career-description">Safeguard organizations against cyber threats and ensure data privacy. With increasing digital transformation, this field offers excellent job security and often allows remote work options.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2025 Career Path Explorer | Data sources: US Bureau of Labor Statistics, Forbes, US News
+  </footer>
+
+</body>
+</html>

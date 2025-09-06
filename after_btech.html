@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Career Options After Graduation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <style>
+    /* ===== HEADER CSS from your first code ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1IdOs7U7HWs_cfPOlGB6zzjP1oxLPV3HLbg&s') no-repeat center center/cover fixed;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      color: #fff; /* default text color on dark bg */
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #002244;
+      padding: 15px 40px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 999;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #fff;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav {
+      display: flex;
+      gap: 35px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      color: #fff;
+      font-weight: 500;
+      padding: 8px;
+      cursor: pointer;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+
+    .nav-link:hover {
+      color: #00bcd4;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      z-index: 1000;
+      min-width: 200px;
+    }
+
+    .nav-item:hover .dropdown,
+    .profile:hover .dropdown {
+      display: block;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .profile {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .profile img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+    }
+
+    .profile .dropdown {
+      right: 0;
+      left: auto;
+    }
+
+    /* ===== Page Content CSS ===== */
+
+    h1 {
+      margin-top: 40px;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      color: #fff;
+      text-align: center;
+    }
+
+    .card-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 40px 60px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .card {
+      width: 100%;
+      padding: 25px 30px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      padding-bottom: 8px;
+      color: #fff;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .card ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+      color: #fff;
+    }
+
+    .btn-learn-more {
+      margin-top: 15px;
+      display: inline-block;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid #fff;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: background 0.3s ease;
+    }
+
+    .btn-learn-more:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    footer {
+      text-align: center;
+      color: white;
+      padding: 20px;
+      font-size: 14px;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+        text-align: center;
+        margin: 20px;
+      }
+
+      .nav {
+        gap: 15px;
+      }
+
+      .nav-link {
+        padding: 6px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER START -->
+  <div class="header">
+    <div class="logo">
+      <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+      Career Path Explorer
+    </div>
+    <div class="nav">
+      <div class="nav-item">
+        <div class="nav-link">HOME</div>
+        <div class="dropdown">
+          <a href="introduction.html">Introduction</a>
+          <a href="quick_guide.html">Quick Guide</a>
+          <a href="course_list.html">Courses List</a>
+          <a href="popular_career.html">Popular Careers</a>
+          <a href="start_here.html">Start Here</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">ABOUT</div>
+        <div class="dropdown">
+          <a href="about_us.html" target="_blank">About Us</a>
+          <a href="about_the_website.html" target="_blank">About the Website</a>
+          <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">EXPLORE CAREERS</div>
+        <div class="dropdown">
+          <a href="after_10.html">After 10th</a>
+          <a href="after_12.html">After 12th</a>
+          <a href="btech.html">Roles After BTech</a>
+          <a href="after_btech.html">Studies After Graduation</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div class="nav-link">TOOLS</div>
+        <div class="dropdown">
+          <a href="carrer_quiz.html">Career Quiz</a>
+          <a href="resume_builder.html">Resume Builder</a>
+          <a href="job_trends.html">Job Trends</a>
+        </div>
+      </div>
+    </div>
+    <div class="profile">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+      <div class="dropdown">
+        <a href="#">Edit Profile</a>
+        <a href="#">Reset Password</a>
+        <a href="#">Logout</a>
+      </div>
+    </div>
+  </div>
+  <!-- HEADER END -->
+
+  <h1>Career Options After Graduation</h1>
+
+  <div class="card-container">
+
+    <div class="card">
+      <h2>Post Graduation (PG Degrees)</h2>
+      <ul>
+        <li>M.Tech, M.Sc, MA, M.Com</li>
+        <li>MBA, MCA, M.Ed, MS</li>
+        <li>Specialized PG Diplomas</li>
+      </ul>
+      <a href="https://collegevidya.com/blog/best-courses-after-b-tech/" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h2>Government Jobs & Exams</h2>
+      <ul>
+        <li>UPSC (IAS, IPS, etc.)</li>
+        <li>SSC, RRB, Banking, Defence</li>
+        <li>State PSCs (like APPSC)</li>
+      </ul>
+      <a href="https://www.geeksforgeeks.org/top-government-exams-that-you-can-take-after-graduation/" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h2>Professional Courses</h2>
+      <ul>
+        <li>Chartered Accountancy (CA)</li>
+        <li>CMA, CS, CFA</li>
+        <li>Data Science, AI, Cybersecurity</li>
+      </ul>
+      <a href="https://www.cheggindia.com/career-guidance/best-courses-after-graduation/" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h2>Creative & Media Fields</h2>
+      <ul>
+        <li>Film Making, Graphic Design</li>
+        <li>Digital Marketing, Content Creation</li>
+        <li>UX/UI Design, Animation</li>
+      </ul>
+      <a href="https://www.shiksha.com/arts-fine-visual-performing/film-making-chp" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h2>Entrepreneurship</h2>
+      <ul>
+        <li>Start Your Own Business</li>
+        <li>Startup Incubation Programs</li>
+        <li>Digital Products & Freelancing</li>
+      </ul>
+      <a href="https://in.video.search.yahoo.com/search/video?fr=mcafee&p=give+complete+details+about+entrepreneurship+after+btech&type=E210IN714G0#id=2&vid=1e49998ea361118f4f822cc565e9dd8a&action=click" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h2>Study Abroad</h2>
+      <ul>
+        <li>MS, MBA, PG Diplomas</li>
+        <li>IELTS, TOEFL, GRE, GMAT</li>
+        <li>Scholarships & Visa Process</li>
+      </ul>
+      <a href="https://in.video.search.yahoo.com/search/video?fr=mcafee&p=give+complete+details+to+study+in+abroad+after+graduation&type=E210IN714G0#id=1&vid=c7f4e144760b3fabd03151a02e538d8d&action=click" target="_blank" class="btn-learn-more">Learn More</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 Career Path Explorer | Empowering your future
+  </footer>
+
+</body>
+</html>

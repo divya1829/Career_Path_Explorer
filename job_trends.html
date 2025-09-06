@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Career Path Explorer - Job Trends 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Open+Sans&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Global font */
+        body, .card, .job-trends-section {
+            background-color: #002244;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            max-width: 2000px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #002244;
+            padding: 15px 40px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+            gap: 10px;
+        }
+
+        .logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: #fff;
+            font-weight: 500;
+            padding: 8px;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #00bcd4;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            min-width: 200px;
+        }
+
+        .nav-item:hover .dropdown,
+        .profile:hover .dropdown {
+            display: block;
+        }
+
+        .dropdown a {
+            display: block;
+            padding: 12px 20px;
+            text-decoration: none;
+            color: #333;
+            transition: background 0.3s;
+        }
+
+        .dropdown a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .profile {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile img {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+        }
+
+        .profile .dropdown {
+            right: 0;
+            left: auto;
+        }
+
+        /* Styles for Job Trends section */
+        .job-trends-section {
+            padding: 40px 20px;
+            color: #2d3748;
+            max-width: 1100px;
+            margin: 40px auto;
+            background-color: #002244;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .job-trends-section h1 {
+            text-align: center;
+            color: #e2e8f3;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .job-trends-section .intro {
+            text-align: center;
+            font-size: 1rem;
+            color: #f0f2f5;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        /* Card style updates */
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            padding: 25px 30px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            color: #e0e6f1;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: #c9d1dc;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .card ul {
+            color: #b0bacf;
+            font-size: 0.95rem;
+            margin-left: 20px;
+        }
+
+        .card ul li {
+            margin-bottom: 6px;
+        }
+
+        .icon {
+            font-size: 32px;
+            color: #b3c7f9;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <img src="https://cdn-icons-png.flaticon.com/128/9552/9552379.png" alt="Logo Icon" />
+            Career Path Explorer
+        </div>
+        <div class="nav">
+            <div class="nav-item">
+                <div class="nav-link">HOME</div>
+                <div class="dropdown">
+                    <a href="introduction.html">Introduction</a>
+                    <a href="quick_guide.html">Quick Guide</a>
+                    <a href="course_list.html">Courses List</a>
+                    <a href="popular_career.html">Popular Careers</a>
+                    <a href="start_here.html">Start Here</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-link">ABOUT</div>
+                <div class="dropdown">
+                    <a href="about_us.html" target="_blank">About Us</a>
+                    <a href="about_the_website.html" target="_blank">About the Website</a>
+                    <a href="contact_and_support.html" target="_blank">Contact & Support</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-link">EXPLORE CAREERS</div>
+                <div class="dropdown">
+                    <a href="after_10.html">After 10th</a>
+                    <a href="after_12.html">After 12th</a>
+                    <a href="btech.html">Roles After BTech</a>
+                    <a href="after_btech.html">Studies After Graduation</a>
+                </div>
+            </div>
+            <div class="nav-item">
+                <div class="nav-link">TOOLS</div>
+                <div class="dropdown">
+                    <a href="career_quiz.html">Career Quiz</a>
+                    <a href="resume_builder.html">Resume Builder</a>
+                    <a href="job_trends.html">Job Trends</a>
+                </div>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Profile Icon" />
+            <div class="dropdown">
+                <a href="#">Edit Profile</a>
+                <a href="#">Reset Password</a>
+                <a href="#">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="job-trends-section">
+        <h1>Job Trends 2025</h1>
+        <p class="intro">
+            In-demand roles include AI, data, cybersecurity, and remote tech support. Skills matter more than degrees—focus on both tech & soft skills.
+        </p>
+        <div class="card">
+            <div class="icon"><i class="fas fa-chart-bar"></i></div>
+            <h2>Data Analyst</h2>
+            <p>Turns data into insights to guide decisions.</p>
+            <ul>
+                <li>Excel, SQL, Python</li>
+                <li>Charts & dashboards</li>
+                <li>Basic statistics</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-brain"></i></div>
+            <h2>AI/ML Engineer</h2>
+            <p>Develops machines that learn and adapt.</p>
+            <ul>
+                <li>Python, TensorFlow</li>
+                <li>Math, algorithms</li>
+                <li>Cloud platforms</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-pen-nib"></i></div>
+            <h2>Prompt Engineer</h2>
+            <p>Designs prompts for effective AI output.</p>
+            <ul>
+                <li>AI understanding</li>
+                <li>Clear communication</li>
+                <li>Domain knowledge</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+            <h2>Cybersecurity Expert</h2>
+            <p>Secures networks and systems from threats.</p>
+            <ul>
+                <li>Hacking tools</li>
+                <li>Firewalls, encryption</li>
+                <li>Risk management</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-comment-dots"></i></div>
+            <h2>Soft Skills Trainer</h2>
+            <p>Coaches people in communication & teamwork.</p>
+            <ul>
+                <li>Public speaking</li>
+                <li>Leadership coaching</li>
+                <li>Behavioral science</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+            <h2>Frontend Developer</h2>
+            <p>Builds user interfaces for apps/websites.</p>
+            <ul>
+                <li>HTML, CSS, JS</li>
+                <li>Responsive design</li>
+                <li>React or Angular</li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="icon"><i class="fas fa-globe"></i></div>
+            <h2>Remote Work Specialist</h2>
+            <p>Supports teams working online effectively.</p>
+            <ul>
+                <li>Zoom, Slack, tools</li>
+                <li>Tech troubleshooting</li>
+                <li>Security awareness</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-stethoscope"></i></div>
+            <h2>Healthcare Technologist</h2>
+            <p>Bridges health and tech for better care.</p>
+            <ul>
+                <li>Medical software</li>
+                <li>AI, IoT in healthcare</li>
+                <li>Data privacy</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+            <h2>UI/UX Designer</h2>
+            <p>Improves usability and digital experience.</p>
+            <ul>
+                <li>Figma, Adobe XD</li>
+                <li>User testing</li>
+                <li>Creative thinking</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-database"></i></div>
+            <h2>Database Manager</h2>
+            <p>Stores and secures structured data.</p>
+            <ul>
+                <li>SQL, NoSQL</li>
+                <li>DB design</li>
+                <li>Backups & tuning</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-user-cog"></i></div>
+            <h2>Backend Developer</h2>
+            <p>Handles server-side logic & APIs.</p>
+            <ul>
+                <li>Java, Node.js, Python</li>
+                <li>Databases</li>
+                <li>RESTful APIs</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <div class="icon"><i class="fas fa-bug"></i></div>
+            <h2>QA Engineer</h2>
+            <p>Ensures software works without bugs.</p>
+            <ul>
+                <li>Manual testing</li>
+                <li>Automation tools</li>
+                <li>Selenium, Postman</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
